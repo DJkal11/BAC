@@ -7,18 +7,13 @@ function App() {
   const [condition, setCondition] = useState(false);
 
   function calcItem(inputInfo) {
-    console.log(inputInfo);
     const floor = Math.floor;
     const Drinks = floor(parseFloat(inputInfo.numDrinks));
     const Weight = floor(parseFloat(inputInfo.bodyWeight)) * 1000;
     const genderNum = parseFloat(inputInfo.gender);
-    console.log(genderNum);
-    console.log(Drinks);
-    console.log(Weight);
-
     const calResult = ((12 * Drinks) / (Weight * genderNum)) * 100;
     const roundedResult = Math.round(calResult * 100) / 100;
-    console.log(roundedResult);
+
     setBAC(roundedResult);
 
     setCondition(() => {
